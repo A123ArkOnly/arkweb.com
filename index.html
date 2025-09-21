@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script>
+    function note1() {
+        alert("gunakan mode landscape jika anda menggumakan hp")
+    }
+</script>
 <title>A123Ark web</title>
 <link rel="stylesheet" href="style.css">
 </head>
@@ -9,10 +14,17 @@
     <a href="2.html">
         <button class="blue">pergi ke halaman 2</button>
     </a>
-    <hr>
+    <hr class="hrr">
     <garis>
         <hr class="garis1">
     </garis>
-    <label class="hal1_label">Web ini baru saja di buat, jadi tidak ada banyak fitur</label>
+    <h3 class="hal1_label">tujuan pembuatan web</h3>
+    <note onclick="note1()">
+        <button class="note">note</button>
+    </note>
+    <div class="hal1_label2">
+        *Web ini di buat untuk memahami html, css, javascript.<br>
+        Dan di hosting dengan GitHub.
+    </div>
 </body>
 </html>
