@@ -1,0 +1,31 @@
+a {
+    position: fixed;
+    left: 100px;
+}
+
+hr {
+    background-color: black;
+    width: 250px;
+    height: 1px;
+    position: fixed;
+    left: 0px;
+}
+
+.garis1{
+    position: fixed;
+    top: -4px;
+    left: 250px;
+    width: 1px;
+    height: 30px;
+}
+
+.blue {
+    background-color: aqua;
+    color: blue;
+}
+
+.hal1_label {
+    position: fixed;
+    top: 50px;
+    left: 20px;
+}
