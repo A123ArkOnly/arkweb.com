@@ -1,9 +1,9 @@
-a {
+.a {
     position: fixed;
     left: 100px;
 }
 
-hr {
+.hrr {
     background-color: black;
     width: 250px;
     height: 1px;
@@ -26,6 +26,22 @@ hr {
 
 .hal1_label {
     position: fixed;
-    top: 50px;
-    left: 20px;
+    top: 35px;
+    left: 30px;
+}
+
+.hal1_label2 {
+    position: fixed;
+    left: 10px;
+    top: 80px;
+}
+
+.note {
+    position: fixed;
+    right: 20px;
+}
+
+.btn_sebelumnya {
+    position: fixed;
+    left: 300px;
 }
