@@ -36,7 +36,7 @@
     </div>
     <script>
         if (localStorage.getItem("lastlogin")) {
-            localStorage.removeItem("lastlogin")
+            window.menu.href="menu.html";
         }
         function login() {
             var nama = document.getElementById("nama").value;
