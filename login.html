@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <style>
+        .div-a {
+            position: fixed;
+            left: 40%;
+            top: 35%;
+        }
+        .button-a {
+            background-color: cyan;
+            color: rgb(0, 0, 0);
+            font-size: 20px;
+            transition: 0.5s;
+            border: none;
+        }
+        .button-a:hover {
+            background-color: rgb(0, 110, 110);
+            color: rgb(0, 0, 0);
+            font-size: 20px;
+            transition: 0.5s;
+            border: none;
+        }
+    </style>
+</head>
+<body style="background-color: cornflowerblue;">
+    <div class="div-a">
+        <h1>login</h1><br>
+        <label>username:</label><input id="nama"><br>
+        <br>
+        <label>password:</label><input id="password" type="password"><br>
+        <br>
+        <button class="button-a" onclick="login()">login</button>
+        <a href="index.html">atau kembali untuk membuat akun</a>
+    </div>
+    <script>
+        if (localStorage.getItem("lastlogin")) {
+            localStorage.removeItem("lastlogin")
+        }
+        function login() {
+            var nama = document.getElementById("nama").value;
+            var pass = document.getElementById("password").value;
+            var user = JSON.parse(localStorage.getItem("user") || "[]");
+            var auth = user.find(u => u.username === nama && u.password === pass);
+            if (auth) {
+                alert("memproses login anda " + nama);
+                localStorage.setItem("lastlogin",JSON.stringify(nama));
+                window.location.href="menu.html";
+            } else {
+                alert("password atau nama salah");
+            }
+        }
+    </script>
+</body>
+</html>

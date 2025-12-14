@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome</title>
+    <style>
+        .div-a {
+            position: fixed;
+            left: 40%;
+            top: 35%;
+        }
+        .button-a {
+            position: relative;
+            left: 70px;
+            background-color: blue;
+            color: white;
+            font-size: 20px;
+            transition: 0.5s;
+            border: none;
+        }
+        .button-a:hover {
+            position: relative;
+            left: 70px;
+            color: white;
+            background-color: rgb(0, 0, 81);
+            font-size: 20px;
+            transition: 0.5s;
+            border: none;
+        }
+        .a-a {
+            position: relative;
+            left: 100px;
+        }
+    </style>
+</head>
+<body style="background-color:cyan;">
+    <div class="div-a">
+        <h1>A123Ark web</h1><br>
+        <label>username:</label><input id="nama">
+        <br><br>
+        <label>password:</label><input id="pass" type="password">
+        <br><br>
+        <button class="button-a" onclick="register()">register</button>
+        <a class="a-a" href="login.html">atau login jika memiliki akun</a>
+    </div>
+    <script>
+        if (localStorage.getItem("lastlogin")) {
+            window.location.href="menu.html"
+        }
+        function register() {
+            var nama = document.getElementById("nama").value;
+            var pass = document.getElementById("pass").value;
+            var user = JSON.parse(localStorage.getItem("user") || "[]");
+            if (nama < 3 || pass < 6) {
+                alert("nama atau password anda terlalu pendek");
+            } else {
+                if (user.some(u => u.username === nama)) {
+                    alert("nama ini sudah di gunakan");
+                } else {
+                    user.push({username: nama, password: pass, color: "#ffffff"});
+                    localStorage.setItem("user",JSON.stringify(user))
+                    alert("berhasil membuat akun " + nama + " silahkan login ke akun yang telah di buat")
+                }
+            }
+        }
+    </script>
+</body>
+</html>
